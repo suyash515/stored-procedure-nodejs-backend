@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, MetaData, Table, select
 
-# Database configuration and connection
+# Database configuration and connections
 DATABASE_URL = "postgresql://user:password@localhost/yourdatabase"
 engine = create_engine(DATABASE_URL)
 metadata = MetaData(bind=engine)
