@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-backend",
+  "version": "1.0.0",
+  "description": "Backend service for fund transfer operations.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "body-parser": "^1.19.0"
+  }
+}
