@@ -1,0 +1,17 @@
+<form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+  <label for="sourceAccountId">Source Account ID:</label>
+  <input id="sourceAccountId" formControlName="sourceAccountId" type="number" />
+
+  <label for="targetAccountId">Target Account ID:</label>
+  <input id="targetAccountId" formControlName="targetAccountId" type="number" />
+
+  <label for="amount">Amount:</label>
+  <input id="amount" formControlName="amount" type="number" step="0.01" />
+
+  <button type="submit" [disabled]="transferForm.invalid">Transfer Funds</button>
+</form>
+
+<div *ngIf="transferForm.invalid && (transferForm.dirty || transferForm.touched)">
+  <p *ngIf="transferForm.errors?.required">All fields are required.</p>
+  <p *ngIf="transferForm.get('amount')?.errors?.min">Amount must be greater than 0.</p>
+</div>
